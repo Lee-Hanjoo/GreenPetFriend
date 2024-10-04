@@ -1,18 +1,33 @@
-import React, { useState } from 'react'
-import { TouchableOpacity } from 'react-native'
+import React, { useRef, useState } from 'react'
+import { Animated, TouchableOpacity } from 'react-native'
 import { Image, StyleSheet, View } from 'react-native'
 
 const CustomHeader = ({navigation}) => {
 
-  const [nav, setNav] = useState(false);
+  const [nav, setNav] = useState(false);  
 
-  console.log(nav);
+  const fadeAnim = useRef(new Animated.Value(0)).current;
+
+  const fadeIn = () => {
+    Animated.timing(fadeAnim, {
+      toValue: 1,
+      duration: 200,
+      useNativeDriver: true,
+    }).start();
+  };
+  const fadeOut = () => {
+    Animated.timing(fadeAnim, {
+      toValue: 0,
+      duration: 200,
+      useNativeDriver: true,
+    }).start();
+  };
 
   return (
     <View>
       <View style={styles.HeaderStyle}>
         <View>
-          <TouchableOpacity onPress={()=>{setNav(true)}} >
+          <TouchableOpacity onPress={()=>{setNav(true); fadeIn();}} >
             <Image source={require('../assets/imgs/icon/icon_menu.svg')}  />
           </TouchableOpacity>
         </View>
@@ -25,15 +40,17 @@ const CustomHeader = ({navigation}) => {
           <Image source={require('../assets/imgs/icon/icon_alarm.svg')} />
         </View>
       </View>
-      <View style={[styles.Nav, nav ? styles.NavActive : '']}>
-        12345
-      </View>
+      <Animated.View style={[styles.Nav, nav ? styles.NavActive : '',{ opacity: fadeAnim}]}>
+        <View style={styles.NavTop}>
+          <Image source={require('../assets/imgs/logo_black.svg')}  />
+          <TouchableOpacity onPress={()=>{setNav(false); fadeOut();}} >
+            <Image source={require('../assets/imgs/icon/icon_x_black.svg')}  />
+          </TouchableOpacity>
+        </View>
+      </Animated.View>
     </View>
   )
 }
-
-
-
 
 const styles = StyleSheet.create({
   HeaderStyle: {
@@ -42,16 +59,30 @@ const styles = StyleSheet.create({
     justifyContent: 'space-between',
     alignItems: 'center',
     borderBottomWidth: 1,
-    borderBottomColor: '#E7E9ED'
+    borderBottomColor: '#E7E9ED',
+    zIndex: 10
   },
   Nav: {
-    backgroundColor: 'red',
+    width: '100%',
+    height: '100vh',
+    backgroundColor: '#fff',
     position: 'absolute',
     left: 0,
-    top: 0
+    top: 0,
+    backfaceVisibility: 'hidden',
   },
   NavActive: {
-    backgroundColor: 'blue'
+    display: 'block',
+    backfaceVisibility: 'visible',
+    zIndex: 999,
+  },
+  NavTop: {
+    flexDirection: "row",
+    padding: 20,
+    justifyContent: 'space-between',
+    alignItems: 'center',
+    borderBottomWidth: 1,
+    borderBottomColor: '#E7E9ED'
   }
 })
 
