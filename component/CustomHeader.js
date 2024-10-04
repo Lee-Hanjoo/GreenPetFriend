@@ -1,5 +1,5 @@
 import React, { useRef, useState } from 'react'
-import { Animated, TouchableOpacity } from 'react-native'
+import { Animated, Pressable, TouchableOpacity } from 'react-native'
 import { Image, StyleSheet, View } from 'react-native'
 
 const CustomHeader = ({navigation}) => {
@@ -27,14 +27,14 @@ const CustomHeader = ({navigation}) => {
     <View>
       <View style={styles.HeaderStyle}>
         <View>
-          <TouchableOpacity onPress={()=>{setNav(true); fadeIn();}} >
+          <Pressable onPress={()=>{setNav(true); fadeIn();}} >
             <Image source={require('../assets/imgs/icon/icon_menu.svg')}  />
-          </TouchableOpacity>
+          </Pressable>
         </View>
         <View>
-          <TouchableOpacity onPress={()=>navigation.navigate('Home')} >
+          <Pressable onPress={()=>navigation.navigate('Home')} >
             <Image source={require('../assets/imgs/logo_black.svg')}  />
-          </TouchableOpacity>
+          </Pressable>
         </View>
         <View>
           <Image source={require('../assets/imgs/icon/icon_alarm.svg')} />
@@ -43,9 +43,9 @@ const CustomHeader = ({navigation}) => {
       <Animated.View style={[styles.Nav, nav ? styles.NavActive : '',{ opacity: fadeAnim}]}>
         <View style={styles.NavTop}>
           <Image source={require('../assets/imgs/logo_black.svg')}  />
-          <TouchableOpacity onPress={()=>{setNav(false); fadeOut();}} >
+          <Pressable onPress={()=>{setNav(false); fadeOut();}} >
             <Image source={require('../assets/imgs/icon/icon_x_black.svg')}  />
-          </TouchableOpacity>
+          </Pressable>
         </View>
       </Animated.View>
     </View>
