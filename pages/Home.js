@@ -1,7 +1,7 @@
 import React from 'react'
 import { ScrollView, StyleSheet } from 'react-native'
-{/* <Button onPress={()=>navigation.navigate('Details')}> */}
-const Home = ({navigation }) => {
+
+const Home = () => {
   return (
     <ScrollView style={styles.container}>
       Home
