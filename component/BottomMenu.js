@@ -13,67 +13,60 @@ const BottomMenu = ({navigation, title}) => {
   return (
     <View style={styles.container}>
       <View style={styles.menuList}>
-        <Pressable style={menuActive === 'home' ? styles.active : ''}
-          onPress={()=>{setMenuActive('home'); navigation.navigate('home')}}
+        <Pressable style={menuActive === '홈' ? styles.active : ''}
+          onPress={()=>{setMenuActive('홈'); navigation.navigate('홈')}}
         >
           {
-            menuActive === 'home' ? 
+            menuActive === '홈' ? 
             <>
-              <Image source={require('../assets/imgs/icon/icon_home_on.svg')} />
+              <Image source={require('../assets/imgs/icon/icon_home_white.svg')} />
               <Text style={styles.textActive}>home</Text>
             </>
             :
             <Image source={require('../assets/imgs/icon/icon_home.svg')}  />
           }
         </Pressable>
-        <Pressable style={menuActive === 'adopt' ? styles.active : ''}
-          onPress={()=>{setMenuActive('adopt'); navigation.navigate('adopt')}}
+        <Pressable style={menuActive === '입양 대기 동물' ? styles.active : ''}
+          onPress={()=>{setMenuActive('입양 대기 동물'); navigation.navigate('입양 대기 동물')}}
         >
           {
-            menuActive === 'adopt' ? 
+            menuActive === '입양 대기 동물' ? 
             <>
-              <Image source={require('../assets/imgs/icon/icon_adopt_on.svg')} />
+              <Image source={require('../assets/imgs/icon/icon_adopt_white.svg')} />
               <Text style={styles.textActive}>adopt</Text>
             </>
             :
             <Image source={require('../assets/imgs/icon/icon_adopt.svg')}  />
           }
         </Pressable>
-        <Pressable style={menuActive === 'story' ? styles.active : ''}
-          onPress={()=>{setMenuActive('story'); navigation.navigate('story')}}
+        <Pressable style={menuActive === '스토리' ? styles.active : ''}
+          onPress={()=>{setMenuActive('스토리'); navigation.navigate('스토리')}}
         >
           {
-            menuActive === 'story' ? 
+            menuActive === '스토리' ? 
             <>
-              <Image source={require('../assets/imgs/icon/icon_story_on.svg')}  />
+              <Image source={require('../assets/imgs/icon/icon_story_white.svg')}  />
               <Text style={styles.textActive}>story</Text>
             </>
             :
             <Image source={require('../assets/imgs/icon/icon_story.svg')}  />
           }
         </Pressable>
-        <Pressable style={menuActive === 'map' ? styles.active : ''}
-          onPress={()=>{setMenuActive('map'); navigation.navigate('map')}}
+        <Pressable style={menuActive === '시설 찾기' ? styles.active : ''}
+          onPress={()=>{setMenuActive('시설 찾기'); navigation.navigate('시설 찾기')}}
         >
           {
-            menuActive === 'map' ? 
+            menuActive === '시설 찾기' ? 
             <>
-              <Image source={require('../assets/imgs/icon/icon_map_on.svg')} />
+              <Image source={require('../assets/imgs/icon/icon_map_white.svg')} />
               <Text style={styles.textActive}>map</Text>
             </>
             :
             <Image source={require('../assets/imgs/icon/icon_map.svg')}  />
           }
         </Pressable>
-        <Pressable style={menuActive === 'menu' ? styles.menuActive : styles.menu} 
-          onPress={() => {navigation.toggleDrawer(); setMenuActive('menu')}}
-        >
-          {
-            menuActive === 'menu' ? 
-            <Image source={require('../assets/imgs/icon/icon_menu_on.svg')}  />
-            :
-            <Image source={require('../assets/imgs/icon/icon_menu.svg')}  />
-          }
+        <Pressable style={styles.menu} onPress={() =>navigation.toggleDrawer()}>
+          <Image source={require('../assets/imgs/icon/icon_menu.svg')}  />
         </Pressable>
       </View>
     </View>
