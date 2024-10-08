@@ -25,7 +25,6 @@ export default function App() {
 
   return (
     <>
-      <CustomHeader />
       <NavigationContainer>
         <Drawer.Navigator 
         initialRouteName="홈"
@@ -34,7 +33,12 @@ export default function App() {
         }
         screenOptions={({ navigation, route }) => { 
             return ({        
-              header: () => <BottomMenu navigation={navigation} title={route.name} />,
+              header: () => (
+              <>
+                <CustomHeader navigation={navigation} title={route.name} />
+                <BottomMenu navigation={navigation} title={route.name} />
+              </>
+            ),
               drawerStyle: {
                 width: screenWidth,
               },
@@ -45,14 +49,14 @@ export default function App() {
                 fontWeight: '500',
                 fontFamily: 'Wanted Sans'
               },
-              // 활성화 스타일
-              drawerActiveTintColor: '#1F2329',
-              drawerActiveBackgroundColor: 'transparent',
               drawerItemStyle: {
                 padding:0,
                 margin:0,
                 marginLeft:24,
               },
+              // 활성화 스타일
+              drawerActiveTintColor: '#1F2329',
+              drawerActiveBackgroundColor: 'transparent',
               // 딤 색상
               overlayColor: 'transparent',
               backBehavior: 'history',
@@ -102,13 +106,13 @@ export default function App() {
               ),
             }}
           />
-          <Drawer.Screen name="마이페이지" component={Mypet} 
+          {/* <Drawer.Screen name="마이페이지" component={Mypet} 
             options={{
               drawerIcon: () => (
                 <Image source={require('./assets/imgs/icon/icon_mypet_black.svg')} style={styles.iconBackground} />
               ),
             }}
-          />
+          /> */}
           {/* <Drawer.Screen name="write" component={Write} />
           <Drawer.Screen name="detail" component={Detail} /> */}
         </Drawer.Navigator>

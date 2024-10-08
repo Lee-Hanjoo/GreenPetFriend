@@ -65,7 +65,7 @@ const BottomMenu = ({navigation, title}) => {
             <Image source={require('../assets/imgs/icon/icon_map.svg')}  />
           }
         </Pressable>
-        <Pressable style={styles.menu} onPress={() =>navigation.toggleDrawer()}>
+        <Pressable style={styles.menu} onPress={() =>navigation.openDrawer()}>
           <Image source={require('../assets/imgs/icon/icon_menu.svg')}  />
         </Pressable>
       </View>
