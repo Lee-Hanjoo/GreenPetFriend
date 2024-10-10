@@ -1,11 +1,14 @@
 import React from 'react'
-import { Image, ImageBackground, Pressable, ScrollView, StyleSheet, Text, View } from 'react-native'
+import { Dimensions, Image, ImageBackground, Pressable, ScrollView, StyleSheet, Text, View } from 'react-native'
 import Tab from '../component/Tab';
 import AdoptPet from '../component/AdoptPet';
 import MainTitle from '../component/MainTitle';
 import BestStory from '../component/BestStory';
 import MissingPet from '../component/MissingPet';
 import CommunityCard from '../component/CommunityCard';
+import Swiper from 'react-native-swiper';
+
+const { width } = Dimensions.get('window');
 
 const Home = () => {
   return (
@@ -117,13 +120,36 @@ const Home = () => {
           <MainTitle titleEng='Community' title='커뮤니티' />
           <View>
             <Tab title={['캠페인&이벤트','자원봉사','뉴스']} />
-            <View>
-              <CommunityCard 
-                title='튼튼 펫 페스타'
-                desc='튼튼 펫 페스타는 반려인과 반려동물이 함께 넓은 야외 행사장에서 신나게 뛰어놀고 다양한 체험도 할 수 있는 행사이다.'
-                location='경기도 화성시'
-                date='2024. 10. 05 ~ 2024. 10. 06'
-              />
+            <View style={styles.community}>
+              <Swiper 
+                showsPagination={false} 
+                showsButtons={false}
+                width={390}
+                height={326}
+                removeClippedSubviews={false}
+              >
+                <CommunityCard 
+                  src={require('../assets/imgs/img_community_sample.jpg')}
+                  title='튼튼 펫 페스타1'
+                  desc='튼튼 펫 페스타는 반려인과 반려동물이 함께 넓은 야외 행사장에서 신나게 뛰어놀고 다양한 체험도 할 수 있는 행사이다. 짱좋은 행사이다 짱짱짱짱'
+                  location='경기도 화성시'
+                  date='2024. 10. 05 ~ 2024. 10. 06'
+                />
+                <CommunityCard 
+                  src={require('../assets/imgs/img_community_sample.jpg')}
+                  title='튼튼 펫 페스타2'
+                  desc='튼튼 펫 페스타는 반려인과 반려동물이 함께 넓은 야외 행사장에서 신나게 뛰어놀고 다양한 체험도 할 수 있는 행사이다. 짱좋은 행사이다 짱짱짱짱'
+                  location='경기도 화성시'
+                  date='2024. 10. 05 ~ 2024. 10. 06'
+                />
+                <CommunityCard 
+                  src={require('../assets/imgs/img_community_sample.jpg')}
+                  title='튼튼 펫 페스타3'
+                  desc='튼튼 펫 페스타는 반려인과 반려동물이 함께 넓은 야외 행사장에서 신나게 뛰어놀고 다양한 체험도 할 수 있는 행사이다. 짱좋은 행사이다 짱짱짱짱'
+                  location='경기도 화성시'
+                  date='2024. 10. 05 ~ 2024. 10. 06'
+                />
+              </Swiper>
             </View>
           </View>
         </View>
@@ -145,8 +171,7 @@ const blue = '#64C7FA';
 
 const styles = StyleSheet.create({
   container: {
-    paddingTop: 64,
-    paddingBottom: 200,
+    paddingVertical: 64,
     backgroundColor: '#fff',
   },
   visual: {
@@ -250,6 +275,9 @@ const styles = StyleSheet.create({
     gap: '24px 10px', 
     flexWrap: 'wrap',
     paddingLeft: 20
+  },
+  community: {
+    paddingHorizontal: 12
   },
 })
 

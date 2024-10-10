@@ -22,7 +22,7 @@ const MissingPet = (props) => {
           <Text style={styles.name}>{name}</Text>
           <Text style={styles.date}>{date}</Text>
         </View>
-        <Text style={styles.info}>{info}</Text>
+        <Text style={styles.info} numberOfLines={1} ellipsizeMode="tail">{info}</Text>
       </View>
     </View>
   )

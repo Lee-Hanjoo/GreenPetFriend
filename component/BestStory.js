@@ -9,7 +9,7 @@ const BestStory = (props) => {
       <Heart />
       <Image source={src} style={styles.img} />
       <Text style={styles.title}>{title}</Text>
-      <Text style={styles.desc}>{desc}</Text>
+      <Text style={styles.desc} numberOfLines={2} ellipsizeMode="tail">{desc}</Text>
     </View>
   )
 }
