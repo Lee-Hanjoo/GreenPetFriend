@@ -7,9 +7,9 @@ const Heart = () => {
     <Pressable style={styles.heart} onPress={()=>{setHeart(!heart)}}>
       {
         heart ? 
-        <Image source={require('../assets/imgs/icon/icon_heart_on.svg')} />
+        <Image source={require('../assets/imgs/icon/icon_circle_heart_on.svg')} />
         :
-        <Image source={require('../assets/imgs/icon/icon_heart.svg')} />
+        <Image source={require('../assets/imgs/icon/icon_circle_heart.svg')} />
       }
     </Pressable>
   )

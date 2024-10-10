@@ -23,8 +23,8 @@ const CustomHeader = ({title}) => {
         }
       </View>
       <Pressable style={styles.alarmWrap}>
-        <View style={styles.alarmUnread}></View>
         <Image source={require('../assets/imgs/icon/icon_alarm.svg')} />
+        <View style={styles.alarmUnread}></View>
       </Pressable>
     </View>
   )
@@ -69,15 +69,15 @@ const styles = StyleSheet.create({
     position: 'relative'
   },
   alarmUnread: {
-    width: 4,
-    height: 4,
+    width: 10,
+    height: 10,
     borderWidth: 2,
     borderColor: '#fff',
     backgroundColor: '#EE815E',
     position: 'absolute',
-    right: 0,
-    top: 0,
-    borderRadius: '50%'
+    right: 1,
+    top: 4,
+    borderRadius: '50%',
   }
 });
 

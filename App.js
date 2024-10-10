@@ -27,7 +27,7 @@ export default function App() {
     <>
       <NavigationContainer>
         <Drawer.Navigator 
-        initialRouteName="홈"
+        initialRouteName="입양 대기 동물"
         drawerContent={(props) => 
             <CustomDrawerContent {...props} />
         }

@@ -137,22 +137,22 @@ const Home = () => {
                   />
                 </View>
                 <View>
-                <CommunityCard 
-                  src={require('../assets/imgs/img_community_sample.jpg')}
-                  title='튼튼 펫 페스타2'
-                  desc='튼튼 펫 페스타는 반려인과 반려동물이 함께 넓은 야외 행사장에서 신나게 뛰어놀고 다양한 체험도 할 수 있는 행사이다. 짱좋은 행사이다 짱짱짱짱'
-                  location='경기도 화성시'
-                  date='2024. 10. 05 ~ 2024. 10. 06'
-                />
+                  <CommunityCard 
+                    src={require('../assets/imgs/img_community_sample.jpg')}
+                    title='튼튼 펫 페스타2'
+                    desc='튼튼 펫 페스타는 반려인과 반려동물이 함께 넓은 야외 행사장에서 신나게 뛰어놀고 다양한 체험도 할 수 있는 행사이다. 짱좋은 행사이다 짱짱짱짱'
+                    location='경기도 화성시'
+                    date='2024. 10. 05 ~ 2024. 10. 06'
+                  />
                 </View>
                 <View>
-                <CommunityCard 
-                  src={require('../assets/imgs/img_community_sample.jpg')}
-                  title='튼튼 펫 페스타3'
-                  desc='튼튼 펫 페스타는 반려인과 반려동물이 함께 넓은 야외 행사장에서 신나게 뛰어놀고 다양한 체험도 할 수 있는 행사이다. 짱좋은 행사이다 짱짱짱짱'
-                  location='경기도 화성시'
-                  date='2024. 10. 05 ~ 2024. 10. 06'
-                />
+                  <CommunityCard 
+                    src={require('../assets/imgs/img_community_sample.jpg')}
+                    title='튼튼 펫 페스타3'
+                    desc='튼튼 펫 페스타는 반려인과 반려동물이 함께 넓은 야외 행사장에서 신나게 뛰어놀고 다양한 체험도 할 수 있는 행사이다. 짱좋은 행사이다 짱짱짱짱'
+                    location='경기도 화성시'
+                    date='2024. 10. 05 ~ 2024. 10. 06'
+                  />
                 </View>
               </Swiper>
             </View>
