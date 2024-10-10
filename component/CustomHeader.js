@@ -22,8 +22,9 @@ const CustomHeader = ({title}) => {
             </View>
         }
       </View>
-      <Pressable>
-        <Image source={require('../assets/imgs/icon/icon_alarm.svg')}/>
+      <Pressable style={styles.alarmWrap}>
+        <View style={styles.alarmUnread}></View>
+        <Image source={require('../assets/imgs/icon/icon_alarm.svg')} />
       </Pressable>
     </View>
   )
@@ -63,6 +64,20 @@ const styles = StyleSheet.create({
     fontFamily: 'Wanted Sans',
     fontSize: 12,
     color: '#8D96A4'
+  },
+  alarmWrap: {
+    position: 'relative'
+  },
+  alarmUnread: {
+    width: 4,
+    height: 4,
+    borderWidth: 2,
+    borderColor: '#fff',
+    backgroundColor: '#EE815E',
+    position: 'absolute',
+    right: 0,
+    top: 0,
+    borderRadius: '50%'
   }
 });
 

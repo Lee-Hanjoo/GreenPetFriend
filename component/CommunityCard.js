@@ -21,13 +21,13 @@ const CommunityCard = (props) => {
 const styles = StyleSheet.create({
   communityCardWrap: {
     width: 350,
+    marginLeft: 20,
     borderWidth: 1,
     borderColor: '#E7E9ED',
     borderRadius: 8,
     overflow: 'hidden',
     justifyContent: 'center',
     alignItems: 'center',
-    marginRight: 12
   },
   top: {
     padding: 20,
