@@ -10,6 +10,9 @@ const Tag = (props) => {
     '중성화X': {style: styles.gray, text: '중성화'},
     '중성화O': {style: styles.blue, text: '중성화'},
     '공고중': {style: styles.green, text: '공고중'},
+    '실종': {style: styles.singleOrange, text: '실종'},
+    '목격': {style: styles.singleGreen, text: '목격'},
+    '완료': {style: styles.singleGray, text: '완료'},
   }
 
   return (
@@ -28,6 +31,7 @@ const blue = '#64C7FA';
 
 const styles = StyleSheet.create({
   tag: {
+    width: 'fit-content',
     paddingVertical: 4, 
     paddingHorizontal: 8, 
     borderRadius: 999
@@ -53,6 +57,21 @@ const styles = StyleSheet.create({
   gray: {
     backgroundColor: gray,
     color: tGray
+  },
+  singleOrange: {
+    backgroundColor: '#EE815E',
+    color: '#fff',
+    fontWeight: 400,
+  },
+  singleGreen:{
+    backgroundColor: '#64DC41',
+    color: '#fff',
+    fontWeight: 400,
+  },
+  singleGray:{
+    backgroundColor: '#8D96A4',
+    color: '#fff',
+    fontWeight: 400,
   },
 })
 

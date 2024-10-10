@@ -2,7 +2,10 @@ import React from 'react'
 import { Image, ImageBackground, Pressable, ScrollView, StyleSheet, Text, View } from 'react-native'
 import Tab from '../component/Tab';
 import AdoptPet from '../component/AdoptPet';
-// style={styles.}
+import MainTitle from '../component/MainTitle';
+import BestStory from '../component/BestStory';
+import MissingPet from '../component/MissingPet';
+import CommunityCard from '../component/CommunityCard';
 
 const Home = () => {
   return (
@@ -11,7 +14,9 @@ const Home = () => {
         <View style={styles.visualText}>
           <Image source={require('../assets/imgs/logo_white.svg')} />
           <Text style={styles.visualTextTitle}>사지말고<br/>입양하세요!</Text>
-          <Pressable style={styles.visualBtn}>무료로 입양받기</Pressable>
+          <Pressable style={styles.visualBtn}>
+            <Text style={styles.visualBtnText}>무료로 입양받기</Text>
+          </Pressable>
         </View>
         <View style={styles.visualImg}>
           <View>
@@ -29,19 +34,96 @@ const Home = () => {
         </View>
       </View>
       <View style={styles.contents}>
-        <View>
-          <View style={styles.titleWrap}>
-            <View>
-              <Text style={styles.contentsTitleEng}>Adopted Animal</Text>
-              <Text style={styles.contentsTitle}>입양 대기 동물</Text>
-            </View>
-            <Pressable style={styles.contentsMoreBtn}>더보기</Pressable>
-          </View>
+        <View style={styles.section}>
+          <MainTitle titleEng='Adopted Animal' title='입양 대기 동물' />
           <View>
-            <Tab title={['강아지','고양이','기타']}></Tab>
-            <View style={styles.adoptPetList}>
-              <AdoptPet tagTitle={['보호중','중성화O']} ></AdoptPet>
-              <AdoptPet tagTitle={['공고중','중성화X']} ></AdoptPet>
+            <Tab title={['강아지','고양이','기타']} />
+            <View style={styles.list}>
+              <AdoptPet 
+                name='포메라니안' 
+                info='암컷, 6개월' 
+                tagTitle={['보호중','중성화O']} 
+                location='충청남도 공주시'
+                src={require('../assets/imgs/img_adopt_animal_sample.jpg')} 
+              />
+              <AdoptPet 
+                name='똥개' 
+                info='수컷, 4살' 
+                tagTitle={['공고중','중성화X']} 
+                location='전라남도 전주시'
+                src={require('../assets/imgs/img_adopt_animal_sample.jpg')} 
+              />
+            </View>
+          </View>
+        </View>
+        <View style={styles.section}>
+          <MainTitle titleEng='Best Adoption Story' title='베스트 입양 일기' />
+          <View style={styles.list}>
+            <BestStory 
+              title='우리 땅콩이 귀엽지 않나용?' 
+              desc='진짜 짱 귀여운거 같아요. 그래서 자랑하려고 게시글 올립니다...' 
+              src={require(`../assets/imgs/img_best_stroy_sample.jpg`)} 
+            />
+            <BestStory 
+              title='우리 땅콩이 귀엽지 않나용?' 
+              desc='진짜 짱 귀여운거 같아요. 그래서 자랑하려고 게시글 올립니다...' 
+              src={require(`../assets/imgs/img_best_stroy_sample.jpg`)} 
+            />
+            <BestStory 
+              title='우리 땅콩이 귀엽지 않나용?' 
+              desc='진짜 짱 귀여운거 같아요. 그래서 자랑하려고 게시글 올립니다...' 
+              src={require(`../assets/imgs/img_best_stroy_sample.jpg`)} 
+            />
+          </View>
+        </View>
+        <View style={styles.section}>
+          <MainTitle titleEng='Missing Animal' title='실종 동물' />
+          <View style={styles.missingPet}>
+            <MissingPet 
+              tagTitle='실종'
+              location='상봉역 인근'
+              src={require(`../assets/imgs/img_missing_pet_sample.jpg`)} 
+              name='믹스견'
+              date='2024. 09. 26'
+              info='암컷, 5개월, 흰색 갈색, 중성화X...'
+            />
+            <MissingPet 
+              tagTitle='목격'
+              location='상봉역 인근'
+              src={require(`../assets/imgs/img_missing_pet_sample.jpg`)} 
+              name='믹스견'
+              date='2024. 09. 26'
+              info='암컷, 5개월, 흰색 갈색, 중성화X...'
+            />
+            <MissingPet 
+              tagTitle='완료'
+              location='상봉역 인근'
+              src={require(`../assets/imgs/img_missing_pet_sample.jpg`)} 
+              name='믹스견'
+              date='2024. 09. 26'
+              info='암컷, 5개월, 흰색 갈색, 중성화X...'
+            />
+            <MissingPet 
+              tagTitle='실종'
+              location='상봉역 인근'
+              src={require(`../assets/imgs/img_missing_pet_sample.jpg`)} 
+              name='믹스견'
+              date='2024. 09. 26'
+              info='암컷, 5개월, 흰색 갈색, 중성화X...'
+            />
+          </View>
+        </View>
+        <View style={styles.section}>
+          <MainTitle titleEng='Community' title='커뮤니티' />
+          <View>
+            <Tab title={['캠페인&이벤트','자원봉사','뉴스']} />
+            <View>
+              <CommunityCard 
+                title='튼튼 펫 페스타'
+                desc='튼튼 펫 페스타는 반려인과 반려동물이 함께 넓은 야외 행사장에서 신나게 뛰어놀고 다양한 체험도 할 수 있는 행사이다.'
+                location='경기도 화성시'
+                date='2024. 10. 05 ~ 2024. 10. 06'
+              />
             </View>
           </View>
         </View>
@@ -93,12 +175,14 @@ const styles = StyleSheet.create({
     paddingHorizontal: 22,
     paddingVertical: 10,
     backgroundColor: tBlack,
+    borderRadius: 999
+  },
+  visualBtnText: {
     color: '#fff',
     fontSize: 14,
     lineHeight: 17,
     fontFamily: 'Wanted Sans',
     fontWeight: 700,
-    borderRadius: 999
   },
   visualImg: {
     flexDirection: 'row',
@@ -126,6 +210,9 @@ const styles = StyleSheet.create({
   contents: {
     marginTop: 80
   },
+  section: {
+    marginBottom: 64
+  },
   titleWrap: {
     flexDirection: 'row',
     justifyContent: 'space-between',
@@ -151,13 +238,19 @@ const styles = StyleSheet.create({
     fontFamily: 'Wanted Sans',
     color: tGray
   },
-  adoptPetList: {
+  list: {
     flexDirection: 'row', 
     gap: 12, 
     flexShrink: 0, 
     overflow: 'auto', 
     paddingLeft:20
-  }
+  },
+  missingPet: {
+    flexDirection:'row', 
+    gap: '24px 10px', 
+    flexWrap: 'wrap',
+    paddingLeft: 20
+  },
 })
 
 export default Home

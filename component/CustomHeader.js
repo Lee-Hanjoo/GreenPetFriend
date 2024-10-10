@@ -1,10 +1,10 @@
 import React from 'react'
 import { View, StyleSheet, Pressable, Image, Text } from 'react-native';
 
-const CustomHeader = ({navigation, title}) => {
+const CustomHeader = ({title}) => {
 
   return (
-    <View style={styles.container}>
+    <View style={styles.CustomHeaderWrap}>
       <View>
         {
           title === '홈' ? 
@@ -34,7 +34,7 @@ export default CustomHeader
 
 
 const styles = StyleSheet.create({
-  container: {  
+  CustomHeaderWrap: {  
     flexDirection: 'row',  
     width: '100%',
     padding: 20,
@@ -44,7 +44,9 @@ const styles = StyleSheet.create({
     left: 0,
     top: 0,
     backgroundColor: '#fff',
-    zIndex: 999
+    zIndex: 999,
+    borderBottomWidth: 1,
+    borderColor: '#E7E9ED'
   },
   titleWrap: {
     flexDirection: 'row',

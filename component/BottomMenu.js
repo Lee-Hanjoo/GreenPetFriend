@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from 'react'
 import { View, Text, StyleSheet, Pressable, Image } from 'react-native';
-import Ionicons from 'react-native-vector-icons/Ionicons';
 
 const BottomMenu = ({navigation, title}) => {
   
